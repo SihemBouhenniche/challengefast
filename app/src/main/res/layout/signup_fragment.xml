@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@drawable/union">
+
+    <ImageView
+            android:layout_width="177dp"
+            android:layout_height="107dp" app:srcCompat="@drawable/logo" android:id="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp" app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+    <EditText
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/first_name"
+            android:background="@drawable/text_field" android:hint="@string/firstname"
+            android:fontFamily="@font/maiden_orange"
+            android:layout_marginStart="20dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="288dp" app:layout_constraintTop_toTopOf="parent" android:paddingBottom="5dp"
+            android:paddingLeft="15dp" android:paddingRight="5dp" android:paddingTop="5dp"/>
+    <EditText
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:hint="@string/lastname"
+            android:ems="10"
+            android:id="@+id/last_name" android:layout_weight="1"
+            android:fontFamily="@font/maiden_orange"
+            android:background="@drawable/text_field"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="20dp" android:layout_marginTop="288dp"
+            app:layout_constraintTop_toTopOf="parent" android:paddingBottom="5dp" android:paddingLeft="15dp"
+            android:paddingRight="5dp" android:paddingTop="5dp"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:id="@+id/email_address"
+            android:background="@drawable/text_field" android:hint="@string/email"
+            android:fontFamily="@font/maiden_orange"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="20dp" android:layout_marginTop="348dp"
+            app:layout_constraintTop_toTopOf="parent" android:paddingLeft="40dp" android:paddingBottom="5dp"
+            android:paddingRight="5dp" android:paddingTop="5dp" android:inputType="textEmailAddress"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:id="@+id/password"
+            android:background="@drawable/text_field" android:hint="@string/password"
+            android:fontFamily="@font/maiden_orange"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="20dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:paddingBottom="5dp" android:paddingLeft="40dp" android:paddingRight="5dp" android:paddingTop="5dp"
+            android:inputType="textPassword" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/email_address"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/email"
+            android:id="@+id/imageView2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/first_name"/>
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="42dp" android:id="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/text_field" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/password"/>
+    <TextView
+            android:text="@string/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:fontFamily="@font/maiden_orange"
+            android:layout_marginTop="128dp" app:layout_constraintTop_toTopOf="parent" android:textSize="24sp"
+            android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+            android:text="sig up and create your first challenge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:fontFamily="@font/maiden_orange" android:textSize="14sp"
+            android:textColor="@color/colorPrimaryDark"/>
+    <Button
+            android:text="@string/signup"
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/submit_signup" android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_home_forms" android:textColor="@color/colorAccent"
+            android:fontFamily="@font/maiden_orange"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/lock"
+            android:id="@+id/imageView4" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/password"/>
+</android.support.constraint.ConstraintLayout>
