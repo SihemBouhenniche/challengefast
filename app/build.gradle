@@ -40,4 +40,6 @@ dependencies {
     apply plugin: 'kotlin-android-extensions'
     implementation 'com.google.android.gms:play-services-flags:16.0.1'
     implementation 'com.google.android.gms:play-services-basement:16.0.1'
+
 }
+

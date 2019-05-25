@@ -1,5 +1,6 @@
 package com.example.challengefast
 
+
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
@@ -119,4 +120,5 @@ class SigninFragment : Fragment() {
             Toast.makeText(this.activity, "Enter Email", Toast.LENGTH_SHORT).show()
         }
     }
+
 }

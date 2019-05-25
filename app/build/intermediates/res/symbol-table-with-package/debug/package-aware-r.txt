@@ -1064,6 +1064,7 @@ drawable cl
 drawable cm
 drawable cn
 drawable co
+drawable comment
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1109,6 +1110,7 @@ drawable er
 drawable es
 drawable et
 drawable fi
+drawable filter
 drawable fj
 drawable fm
 drawable fr
@@ -1130,6 +1132,7 @@ drawable hn
 drawable hr
 drawable ht
 drawable hu
+drawable ic_add
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
@@ -1138,8 +1141,10 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
+drawable ic_profile
 drawable id
 drawable ie
+drawable iftar
 drawable il
 drawable in
 drawable iq
@@ -1238,6 +1243,8 @@ drawable sc
 drawable sd
 drawable se
 drawable sg
+drawable shadow_bcg
+drawable share
 drawable si
 drawable sk
 drawable sl
@@ -1246,9 +1253,11 @@ drawable sn
 drawable so
 drawable sr
 drawable st
+drawable star
 drawable sv
 drawable sy
 drawable sz
+drawable ta7fid
 drawable td
 drawable text_field
 drawable tg
@@ -1269,6 +1278,7 @@ drawable ua
 drawable ug
 drawable union
 drawable us
+drawable user_man
 drawable uy
 drawable uz
 drawable va
@@ -1333,6 +1343,9 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id comment_btn
+id constraintLayout
+id constraintLayout3
 id container
 id container_form
 id content
@@ -1343,6 +1356,7 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id description_post
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1367,7 +1381,9 @@ id fill_vertical
 id filled
 id first_name
 id fixed
+id floatingActionButton
 id forever
+id frame_container
 id ghost_view
 id gone
 id group_divider
@@ -1382,7 +1398,9 @@ id ifRoom
 id image
 id imageView
 id imageView2
+id imageView3
 id imageView4
+id imageView5
 id imgflag
 id info
 id invisible
@@ -1400,6 +1418,7 @@ id list_item
 id logo
 id masked
 id media_actions
+id media_post
 id message
 id middle
 id mini
@@ -1407,10 +1426,10 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id navigation
-id navigation_dashboard
+id navigation_add
 id navigation_header_container
 id navigation_home
-id navigation_notifications
+id navigation_profile
 id never
 id none
 id normal
@@ -1426,6 +1445,7 @@ id parent_matrix
 id password_signin
 id percent
 id pin
+id posts_list_view
 id progress_circular
 id progress_horizontal
 id radio
@@ -1447,6 +1467,7 @@ id search_bar
 id search_button
 id search_close_btn
 id search_edit_frame
+id search_field
 id search_go_btn
 id search_mag_icon
 id search_plate
@@ -1454,6 +1475,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id share_btn
 id shortcut
 id showCustom
 id showHome
@@ -1474,6 +1496,7 @@ id src_atop
 id src_in
 id src_over
 id standard
+id star_btn
 id start
 id status_bar_latest_event_content
 id stretch
@@ -1482,6 +1505,7 @@ id submit_area
 id submit_signin
 id submit_signup
 id tabMode
+id tag_post
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1500,6 +1524,7 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id title_post
 id title_template
 id top
 id topPanel
@@ -1514,6 +1539,9 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_country_post
+id user_full_name_post
+id user_photo
 id view_offset_helper
 id visible
 id wide
@@ -1602,6 +1630,8 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout post_layout
+layout posts_fragment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1701,9 +1731,9 @@ string signincitation
 string signup
 string signupcitation
 string status_bar_notification_info_overflow
-string title_dashboard
+string title_add
 string title_home
-string title_notifications
+string title_profile
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2156,6 +2186,7 @@ style Widget_AppCompat_Spinner_Underlined
 style Widget_AppCompat_TextView_SpinnerItem
 style Widget_AppCompat_Toolbar
 style Widget_AppCompat_Toolbar_Button_Navigation
+style Widget_BottomNavigationView
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Design_AppBarLayout
