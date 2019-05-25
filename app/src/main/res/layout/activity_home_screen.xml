@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeScreen" android:background="@drawable/bcg_dark" android:id="@+id/home_screen">
+        tools:context=".Activities.HomeScreenActivity" android:background="@drawable/bcg_dark" android:id="@+id/home_screen">
     <ImageView
             android:layout_width="300dp"
             android:layout_height="208dp" app:srcCompat="@drawable/logo" android:id="@+id/logo"

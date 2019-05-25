@@ -5,8 +5,8 @@
                                              android:layout_height="match_parent">
 
     <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp" app:srcCompat="@drawable/user_man" android:id="@+id/user_photo"
+            android:layout_width="64dp"
+            android:layout_height="62dp" app:srcCompat="@drawable/user_man" android:id="@+id/user_photo"
             android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
     <TextView
@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/user_full_name_post" android:textSize="18sp"
             android:fontFamily="@font/maiden_orange" app:layout_constraintStart_toEndOf="@+id/user_photo"
-            android:layout_marginStart="40dp" android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp" android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent" android:textColor="@color/colorPrimaryDark"/>
     <TextView
             android:text="Algeria"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/user_country_post" android:textSize="14sp"
             android:fontFamily="@font/maiden_orange" app:layout_constraintStart_toEndOf="@+id/user_photo"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="12dp" app:layout_constraintTop_toBottomOf="@+id/user_full_name_post"/>
     <TextView
             android:text="Collectif Iftar"
@@ -47,22 +47,34 @@
                                                  android:layout_marginStart="8dp"
                                                  app:layout_constraintEnd_toEndOf="parent"
                                                  android:layout_marginEnd="8dp" android:id="@+id/constraintLayout"
-                                                 android:layout_marginTop="4dp">
+    >
         <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp" android:id="@+id/star_btn" android:background="@drawable/star"
+                android:layout_width="30dp"
+                android:layout_height="30dp" android:id="@+id/star_btn" android:background="@drawable/ic_star_empty"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp" android:id="@+id/comment_btn" android:background="@drawable/comment"
+                android:layout_width="30dp"
+                android:layout_height="30dp" android:id="@+id/comment_btn"
+                android:background="@drawable/ic_comment"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/star_btn" android:layout_marginStart="16dp"/>
+                app:layout_constraintStart_toEndOf="@+id/star_btn" android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp" android:id="@+id/share_btn" android:background="@drawable/share"
+                android:layout_width="30dp"
+                android:layout_height="30dp" android:id="@+id/share_btn" android:background="@drawable/ic_share"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/comment_btn" android:layout_marginStart="20dp"/>
+                app:layout_constraintStart_toEndOf="@+id/comment_btn" android:layout_marginStart="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <Button
+                android:text="@string/forkpostbtn"
+                android:layout_width="127dp"
+                android:layout_height="38dp"
+                android:id="@+id/fork_post"
+                android:textColor="@color/colorPrimary" android:fontFamily="@font/maiden_orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="12sp" android:background="@drawable/ripple_btn"/>
     </android.support.constraint.ConstraintLayout>
     <TextView
             android:text="Meet other Muslims. Get together and have a forum to discuss Islam in a  non-judgmental environment. see more...       "
@@ -80,5 +92,5 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/description_post"
             android:fontFamily="@font/maiden_orange" android:textSize="18sp"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorPrimaryDark" android:paddingBottom="20dp"/>
 </android.support.constraint.ConstraintLayout>

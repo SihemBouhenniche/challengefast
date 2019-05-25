@@ -15,10 +15,11 @@
     <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true" app:srcCompat="@drawable/filter" android:id="@+id/floatingActionButton"
+            android:clickable="true" app:srcCompat="@drawable/ic_filter" android:id="@+id/floatingActionButton"
             android:layout_weight="1" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTintMode="screen"/>
     <ListView
             android:layout_width="match_parent"
             android:layout_height="0dp"

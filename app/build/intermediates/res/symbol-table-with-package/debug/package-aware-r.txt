@@ -1094,7 +1094,9 @@ drawable hr
 drawable ht
 drawable hu
 drawable ic_add
+drawable ic_comment
 drawable ic_dashboard_black_24dp
+drawable ic_filter
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1103,6 +1105,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable ic_profile
+drawable ic_share
+drawable ic_star_empty
 drawable id
 drawable ie
 drawable iftar
@@ -1194,6 +1198,7 @@ drawable pw
 drawable py
 drawable qa
 drawable rectangle
+drawable ripple_btn
 drawable ro
 drawable rs
 drawable ru
@@ -1337,6 +1342,7 @@ id first_name
 id fixed
 id floatingActionButton
 id forever
+id fork_post
 id frame_container
 id ghost_view
 id gone
@@ -1628,6 +1634,7 @@ string email
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firstname
+string forkpostbtn
 string hide_bottom_view_on_scroll_behavior
 string lastname
 string mtrl_chip_close_icon_content_description

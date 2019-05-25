@@ -11,4 +11,5 @@
     <string name="email">Email address</string>
     <string name="signincitation">Sign in and continue your navigation</string>
     <string name="signupcitation">Sign up and create your first challenge</string>
+    <string name="forkpostbtn">Accept challenge</string>
 </resources>
