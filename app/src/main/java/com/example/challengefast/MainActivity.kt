@@ -2,6 +2,7 @@ package com.example.challengefast
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -10,15 +11,16 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                message.setText(R.string.title_home)
+                val fragment = PostsFragment()
+                addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
+            R.id.navigation_add -> {
+
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
-                message.setText(R.string.title_notifications)
+            R.id.navigation_profile -> {
+
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -30,5 +32,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        val fragment = PostsFragment()
+        addFragment(fragment)
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+            .replace(R.id.frame_container, fragment, fragment.javaClass.getSimpleName())
+            .addToBackStack(fragment.javaClass.getSimpleName())
+            .commit()
     }
 }

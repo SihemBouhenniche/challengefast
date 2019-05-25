@@ -1,4 +1,0 @@
-#Wed May 22 14:09:36 CEST 2019
-base.0=C\:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
-path.0=classes.dex
-renamed.0=classes.dex
