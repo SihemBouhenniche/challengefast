@@ -74,7 +74,7 @@
                 android:textColor="@color/colorPrimary" android:fontFamily="@font/maiden_orange"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                android:textSize="12sp" android:background="@drawable/ripple_btn"/>
+                android:textSize="12sp" android:background="@drawable/btn_home"/>
     </android.support.constraint.ConstraintLayout>
     <TextView
             android:text="Meet other Muslims. Get together and have a forum to discuss Islam in a  non-judgmental environment. see more...       "

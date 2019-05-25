@@ -1,9 +1,8 @@
 package com.example.challengefast.Activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
-import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -44,7 +43,7 @@ class HomeScreenActivity : AppCompatActivity() {
         })
     }
 
-    private fun addFragment(fragment: Fragment) {
+    private fun addFragment(fragment: android.support.v4.app.Fragment) {
         supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)

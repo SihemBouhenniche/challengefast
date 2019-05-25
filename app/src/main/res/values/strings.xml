@@ -3,11 +3,15 @@
     <string name="title_home">Home</string>
     <string name="title_add">Add</string>
     <string name="title_profile">Profile</string>
+    <string name="title_my_posts">My challenges</string>
+    <string name="title_others_posts">Forked challenges</string>
     <string name="signin">Sign in</string>
     <string name="signup">Sign up</string>
     <string name="firstname">First Name</string>
     <string name="lastname">LastName</string>
     <string name="password">Password</string>
+    <string name="forgot_password">Forgot your password ? reset it here </string>
+    <string name="title_no_content">No existed content</string>
     <string name="email">Email address</string>
     <string name="signincitation">Sign in and continue your navigation</string>
     <string name="signupcitation">Sign up and create your first challenge</string>
