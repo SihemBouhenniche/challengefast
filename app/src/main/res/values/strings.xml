@@ -8,6 +8,8 @@
     <string name="firstname">First Name</string>
     <string name="lastname">LastName</string>
     <string name="password">Password</string>
+    <string name="forgot_password">Forgot your password ? reset it here </string>
+
     <string name="email">Email address</string>
     <string name="signincitation">Sign in and continue your navigation</string>
     <string name="signupcitation">Sign up and create your first challenge</string>
