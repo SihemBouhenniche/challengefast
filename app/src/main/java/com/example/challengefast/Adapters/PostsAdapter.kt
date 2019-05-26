@@ -1,6 +1,7 @@
 package com.example.challengefast.Adapters
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +22,10 @@ class PostsAdapter : BaseAdapter {
         //put data
         layoutItem.title_post.text = item.challenge
         layoutItem.tag_post.text = item.tag
-        layoutItem.media_post.setImageResource(item.media)
+        layoutItem.media_post.setImageURI(Uri.parse(item.media))
+        //only for test we use image from drawble
+        if(item.media == "")
+            layoutItem.media_post.setImageResource(R.drawable.iftar)
         layoutItem.description_post.text = item.description
         layoutItem.star_btn.setOnClickListener {
             if(item.state == 1){

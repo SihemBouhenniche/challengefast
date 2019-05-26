@@ -1,4 +1,5 @@
 package com.example.challengefast
+import android.net.Uri
 import com.example.challengefast.Models.Country
 import com.example.challengefast.Models.Post
 import kotlin.collections.ArrayList
@@ -123,8 +124,8 @@ internal class Utility {
             }
         }
         var PostsDataSource = arrayListOf<Post>(Post("Collectif Iftar", "#Iftar_Jama3i", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
-                "non-judgmental environment. see more... ", R.drawable.iftar),Post("Ta7fid Qran", "#60_7izb", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
-                "non-judgmental environment. see more... ", R.drawable.ta7fid))
+                "non-judgmental environment. see more... ", ""),Post("Ta7fid Qran", "#60_7izb", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
+                "non-judgmental environment. see more... ", ""))
 
     }
 

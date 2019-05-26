@@ -9,20 +9,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
 import com.example.challengefast.Models.Post
 import com.example.challengefast.R
 import com.example.challengefast.Utility
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.new_post_form_fragment.*
-import kotlinx.android.synthetic.main.post_layout.*
-import kotlin.math.log
 
 class NewPostFragment : Fragment() {
     var newPost: Post? = null
     private val REQUEST_PICK_PHOTO = 1
-    private var uriPhoto: Uri? = null
+    private var uriPhoto: Uri = Uri.EMPTY
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,48 +38,87 @@ class NewPostFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        /*if(!!challenge_tag_form.text.isEmpty() && !!challenge_description_form.text.isEmpty() && !!challenge_name_form.text.isEmpty()){
-            newPost = Post(challenge_name_form.text.toString(),challenge_tag_form.text.toString(),challenge_description_form.text.toString(),R.drawable.bcg_dark)
-
-        }*/
 
         //add media
-        add_media_btn.setOnClickListener(View.OnClickListener {
-            if (uriPhoto != null) {
-                Toast.makeText(context, "You can't pick other photo", Toast.LENGTH_SHORT).show()
-            } else {
-
-                val intent = Intent()
-                intent.type = "image/*"
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-                intent.action = Intent.ACTION_GET_CONTENT
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_PICK_PHOTO)
-            }
-        })
+        add_media_btn.setOnClickListener {
+            openGallery()
+        }
 
         //delete media
-        delete_picked_media.setOnClickListener(View.OnClickListener {
+        delete_picked_media.setOnClickListener{
             deleteImage()
-        })
+        }
 
         //submit creation
         submit_new_post.setOnClickListener {
-            var title : String = challenge_name_form.text.toString()
-            var tag : String = challenge_tag_form.text.toString()
-            var description : String = challenge_description_form.text.toString()
-            if(title != "" && tag != "" && description != "") {
+            submit_new_post.visibility = View.INVISIBLE
+            spinner_progress.visibility = View.VISIBLE
+            addNewPost()
+            loadNextFragment()
+        }
+    }
+
+    //private function open gallery
+    private fun openGallery(){
+        if (uriPhoto != Uri.EMPTY) {
+            Toast.makeText(context, "You can't pick other photo", Toast.LENGTH_SHORT).show()
+        } else {
+            //open gallery
+            val intent = Intent()
+            intent.type = "image/*"
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+            intent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_PICK_PHOTO)
+        }
+    }
+
+    //private function for add new post
+    private fun addNewPost(){
+        var title : String = challenge_name_form.text.toString()
+        var tag : String = challenge_tag_form.text.toString()
+        var description : String = challenge_description_form.text.toString()
+
+        if(title != "" && tag != "" && description != "" && uriPhoto != Uri.EMPTY) {
+            //every thing is okay create new post and add it to firebase
+            //upload the image first
+            var storageReference : StorageReference = FirebaseStorage.getInstance().reference.child("challenge_photos")
+            var imgFilePath : StorageReference = storageReference.child(uriPhoto.lastPathSegment)
+            imgFilePath.putFile(uriPhoto).addOnSuccessListener { taskSnapshot ->
+                //create new post
                 newPost = Post(
                     title,
                     tag,
                     description,
-                    R.drawable.bcg_dark
+                    taskSnapshot.uploadSessionUri.toString()
                 )
-                Utility.PostsDataSource.add(newPost!!)
-                loadNextFragment()
-            }else{
-                Toast.makeText(context, "You must fill all informations", Toast.LENGTH_SHORT).show()
+                //add post to firebase database
+                putPostInFirebase(newPost!!)
+            }.addOnFailureListener { error ->
+                    submit_new_post.visibility = View.VISIBLE
+                    spinner_progress.visibility = View.INVISIBLE
+                    Toast.makeText(context,error.message,Toast.LENGTH_SHORT).show()
             }
+            Utility.PostsDataSource.add(newPost!!)
+        }else{
+            Toast.makeText(context, "You must fill all inputs", Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun putPostInFirebase(post: Post){
+        var postRef:DatabaseReference = FirebaseDatabase.getInstance().getReference("Posts").push()
+        post.key =  postRef.key.toString()
+        postRef.setValue(post).addOnSuccessListener { taskSnapshot ->
+            Toast.makeText(context, "Challenge added successfully", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener { error ->
+            submit_new_post.visibility = View.VISIBLE
+            spinner_progress.visibility = View.INVISIBLE
+            Toast.makeText(context,error.message,Toast.LENGTH_SHORT).show()
+        }
+    }
+    //private fucntion for delete picked image
+    private fun deleteImage(){
+        picked_media_photo.setImageResource(R.drawable.ic_error)
+        delete_picked_media.visibility = View.INVISIBLE
+        this.uriPhoto = Uri.EMPTY
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -87,28 +128,17 @@ class NewPostFragment : Fragment() {
                     Toast.makeText(context, "An error have been occured", Toast.LENGTH_SHORT).show()
                     Log.i("MEDIA","An error have been occured")
                 }
-                val clipData = data!!.clipData
-                if (clipData != null) { // handle single photo
-                    uriPhoto = clipData.getItemAt(0).uri
-                    Log.i("MEDIA","Photo picked ${uriPhoto} from clipdata")
-                }else{
-                    uriPhoto= data?.data
-                    Log.i("MEDIA","Photo picked ${uriPhoto} from data")
-                }
+                uriPhoto= data?.data!!
+                Log.i("MEDIA","Photo picked ${uriPhoto} from data")
                 displayImage(this.uriPhoto!!)
             }
         }
     }
     fun displayImage(image: Uri) {
-        //picked_media_photo.setImageURI(image)
+        picked_media_photo.setImageURI(image)
         //for test i use from drawable my phone is sick hhhh
-        picked_media_photo.setImageResource(R.drawable.bcg_dark)
+        //picked_media_photo.setImageResource(R.drawable.bcg_dark)
         delete_picked_media.visibility = View.VISIBLE
-    }
-    fun deleteImage(){
-        picked_media_photo.setImageResource(R.drawable.ic_error)
-        delete_picked_media.visibility = View.INVISIBLE
-        this.uriPhoto = null
     }
 
     private fun loadNextFragment(){

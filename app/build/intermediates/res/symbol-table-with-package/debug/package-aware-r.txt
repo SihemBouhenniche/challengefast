@@ -1257,6 +1257,7 @@ drawable sl
 drawable sm
 drawable sn
 drawable so
+drawable spinner
 drawable sr
 drawable st
 drawable sv
@@ -1508,6 +1509,7 @@ id snap
 id snapMargins
 id spacer
 id spinner
+id spinner_progress
 id split_action_bar
 id spread
 id spread_inside

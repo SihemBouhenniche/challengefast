@@ -2884,6 +2884,10 @@
         "source": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\src\\main\\res\\drawable\\tj.png"
     },
     {
+        "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\drawable_spinner.gif.flat",
+        "source": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\src\\main\\res\\drawable\\spinner.gif"
+    },
+    {
         "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_toolbar.xml.flat",
         "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a21199d3a123f5258797a6168d31ec5b\\res\\layout\\abc_screen_toolbar.xml"
     },
