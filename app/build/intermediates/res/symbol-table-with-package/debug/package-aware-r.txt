@@ -1131,6 +1131,7 @@ drawable hr
 drawable ht
 drawable hu
 drawable ic_add
+drawable ic_close
 drawable ic_comment
 drawable ic_copy_file
 drawable ic_dashboard_black_24dp
@@ -1146,6 +1147,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
 drawable ic_profile
 drawable ic_share
+drawable ic_star
 drawable ic_star_empty
 drawable id
 drawable ie
@@ -1323,6 +1325,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_media_btn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1341,6 +1344,9 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id challenge_description_form
+id challenge_name_form
+id challenge_tag_form
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1360,6 +1366,7 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id delete_picked_media
 id description_post
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1455,6 +1462,7 @@ id parentPanel
 id parent_matrix
 id password_signin
 id percent
+id picked_media_photo
 id pin
 id posts_list_view
 id progress_circular
@@ -1513,6 +1521,7 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id submit_new_post
 id submit_signin
 id submit_signup
 id tabMode
@@ -1527,6 +1536,7 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textView3
 id textView4
 id text_input_password_toggle
 id textcountry
@@ -1628,6 +1638,7 @@ layout design_text_input_password_icon
 layout file_item_country
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout new_post_form_fragment
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action

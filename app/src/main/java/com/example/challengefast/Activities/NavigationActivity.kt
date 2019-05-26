@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
+import com.example.challengefast.Fragments.NewPostFragment
 import com.example.challengefast.Fragments.PostsFragment
 import com.example.challengefast.Fragments.ProfileFragment
 import com.example.challengefast.R
@@ -18,19 +19,17 @@ class NavigationActivity : AppCompatActivity() {
             R.id.navigation_home -> {
                 val fragment = PostsFragment()
                 addFragment(fragment)
-                Toast.makeText(this,"load fragment",Toast.LENGTH_SHORT)
                 Log.i("FRG","add fragment")
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_add -> {
-                Toast.makeText(this,"load fragment",Toast.LENGTH_SHORT)
-                Log.i("FRG","add fragment")
+                val fragment = NewPostFragment()
+                addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
                 val fragment = ProfileFragment()
                 addFragment(fragment)
-                Toast.makeText(this,"load fragment",Toast.LENGTH_SHORT)
                 Log.i("FRG","add fragment")
                 return@OnNavigationItemSelectedListener true
             }

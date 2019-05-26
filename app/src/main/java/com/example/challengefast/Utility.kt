@@ -122,13 +122,10 @@ internal class Utility {
                 add(Country("263", "Zimbabwe", "ZW"))
             }
         }
-        val PostsDataSource: List<Post> = object :ArrayList<Post>(){
-            init {
-                add(Post("Collectif Iftar", "#Iftar_Jama3i", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
-                        "non-judgmental environment. see more... ", R.drawable.iftar))
-                add(Post("Ta7fid Qran", "#60_7izb", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
-                        "non-judgmental environment. see more... ", R.drawable.ta7fid))
-            }
-        }
+        var PostsDataSource = arrayListOf<Post>(Post("Collectif Iftar", "#Iftar_Jama3i", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
+                "non-judgmental environment. see more... ", R.drawable.iftar),Post("Ta7fid Qran", "#60_7izb", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
+                "non-judgmental environment. see more... ", R.drawable.ta7fid))
+
     }
+
 }

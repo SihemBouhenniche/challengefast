@@ -23,6 +23,15 @@ class PostsAdapter : BaseAdapter {
         layoutItem.tag_post.text = item.tag
         layoutItem.media_post.setImageResource(item.media)
         layoutItem.description_post.text = item.description
+        layoutItem.star_btn.setOnClickListener {
+            if(item.state == 1){
+                layoutItem.star_btn.setBackgroundResource(R.drawable.ic_star_empty)
+            }
+            else{
+                layoutItem.star_btn.setBackgroundResource(R.drawable.ic_star)
+            }
+            item.state = -1*item.state
+        }
         return layoutItem
     }
 
