@@ -10,10 +10,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.challengefast.Activities.NavigationActivity
 import com.example.challengefast.Models.Post
 import com.example.challengefast.R
 import com.example.challengefast.Utility
+import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.tasks.Task
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -54,7 +57,6 @@ class NewPostFragment : Fragment() {
             submit_new_post.visibility = View.INVISIBLE
             spinner_progress.visibility = View.VISIBLE
             addNewPost()
-            loadNextFragment()
         }
     }
 
@@ -83,22 +85,36 @@ class NewPostFragment : Fragment() {
             //upload the image first
             var storageReference : StorageReference = FirebaseStorage.getInstance().reference.child("challenge_photos")
             var imgFilePath : StorageReference = storageReference.child(uriPhoto.lastPathSegment)
-            imgFilePath.putFile(uriPhoto).addOnSuccessListener { taskSnapshot ->
-                //create new post
-                newPost = Post(
-                    title,
-                    tag,
-                    description,
-                    taskSnapshot.uploadSessionUri.toString()
-                )
-                //add post to firebase database
-                putPostInFirebase(newPost!!)
-            }.addOnFailureListener { error ->
+            val uploadTask = imgFilePath.putFile(uriPhoto)
+            val urlTask = uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+                if (!task.isSuccessful) {
+                    task.exception?.let {
+                        throw it
+                    }
+                }
+                return@Continuation imgFilePath.downloadUrl
+            }).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    //create new post
+                    newPost = Post(
+                        title,
+                        tag,
+                        description,
+                        task.result.toString()
+                    )
+                    //add post to firebase database
+                    putPostInFirebase(newPost!!)
+                } else {
                     submit_new_post.visibility = View.VISIBLE
                     spinner_progress.visibility = View.INVISIBLE
-                    Toast.makeText(context,error.message,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,task.exception!!.message,Toast.LENGTH_SHORT).show()
+                }
             }
-            Utility.PostsDataSource.add(newPost!!)
+            /*imgFilePath.putFile(uriPhoto).addOnSuccessListener { taskSnapshot ->
+
+            }.addOnFailureListener { error ->
+
+            }*/
         }else{
             Toast.makeText(context, "You must fill all inputs", Toast.LENGTH_SHORT).show()
         }
@@ -108,6 +124,8 @@ class NewPostFragment : Fragment() {
         post.key =  postRef.key.toString()
         postRef.setValue(post).addOnSuccessListener { taskSnapshot ->
             Toast.makeText(context, "Challenge added successfully", Toast.LENGTH_SHORT).show()
+            NavigationActivity.postsList.add(newPost!!)
+            loadNextFragment()
         }.addOnFailureListener { error ->
             submit_new_post.visibility = View.VISIBLE
             spinner_progress.visibility = View.INVISIBLE

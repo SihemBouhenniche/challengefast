@@ -1241,6 +1241,7 @@ drawable py
 drawable qa
 drawable rectangle
 drawable ro
+drawable rotate_spinner
 drawable rs
 drawable ru
 drawable rw

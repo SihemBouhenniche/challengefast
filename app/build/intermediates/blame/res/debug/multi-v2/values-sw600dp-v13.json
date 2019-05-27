@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a21199d3a123f5258797a6168d31ec5b\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\295d17fb3123ee7dd2a9071fa90bb062\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\6ca1e6ccac267b6d60142cc56ce922ac\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\4faa7f78d32fe742c34cf7eec5a459b4\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import com.example.challengefast.Activities.NavigationActivity
 import com.example.challengefast.Adapters.PostsAdapter
 import com.example.challengefast.R
 
@@ -15,7 +16,7 @@ class PostsFragment : Fragment() {
     var listPostsAdapter : PostsAdapter ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        listPostsAdapter = PostsAdapter(activity!!)
+        listPostsAdapter = PostsAdapter(activity!!,NavigationActivity.postsList)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\a42e57f749ad24a4215ee07af36af9ef\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\6352f898bcf222263ef5d8cab26c1949\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a21199d3a123f5258797a6168d31ec5b\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\295d17fb3123ee7dd2a9071fa90bb062\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

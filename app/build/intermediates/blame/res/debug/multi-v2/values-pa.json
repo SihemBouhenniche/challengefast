@@ -4,24 +4,7 @@
             "outputFile": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pa\\values-pa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\a42e57f749ad24a4215ee07af36af9ef\\res\\values-pa\\values-pa.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "5595",
-                        "endColumns": "100",
-                        "endOffsets": "5691"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\a21199d3a123f5258797a6168d31ec5b\\res\\values-pa\\values-pa.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\295d17fb3123ee7dd2a9071fa90bb062\\res\\values-pa\\values-pa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\fcafcc90565f0b3f23685aa2ada66b60\\res\\values-pa\\values.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\6352f898bcf222263ef5d8cab26c1949\\res\\values-pa\\values-pa.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "5595",
+                        "endColumns": "100",
+                        "endOffsets": "5691"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\7f5d7aff6a14c4353253cafb8286472f\\res\\values-pa\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\c05aaa4019575e13bfda657ab4430979\\res\\values-pa\\values.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\e70bac5c36890acc377a43b57b5f6068\\res\\values-pa\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

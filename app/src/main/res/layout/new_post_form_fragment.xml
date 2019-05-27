@@ -3,13 +3,6 @@
                                              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
-    <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp" app:srcCompat="@drawable/spinner"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:visibility="invisible" android:id="@+id/spinner_progress"/>
     <TextView
             android:text="Create new challenge"
             android:layout_width="wrap_content"
@@ -89,4 +82,13 @@
             app:layout_constraintEnd_toEndOf="@+id/picked_media_photo"
             app:layout_constraintTop_toTopOf="@+id/picked_media_photo" android:background="@drawable/ic_close"
             android:visibility="invisible"/>
+    <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_progress"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/submit_new_post" android:visibility="gone"
+            android:background="@drawable/rotate_spinner" android:progressDrawable="@drawable/rotate_spinner"
+            android:indeterminateDrawable="@drawable/rotate_spinner"/>
 </android.support.constraint.ConstraintLayout>
