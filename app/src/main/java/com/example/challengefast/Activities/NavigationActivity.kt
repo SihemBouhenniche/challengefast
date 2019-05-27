@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.challengefast.Fragments.NewPostFragment
 import com.example.challengefast.Fragments.PostsFragment
@@ -54,27 +55,23 @@ class NavigationActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         Toast.makeText(this,"load fragment",Toast.LENGTH_SHORT)
         Log.i("FRG","add fragment")
+        //set the spinner
+        loader_posts.visibility = View.VISIBLE
+        frame_container.visibility = View.INVISIBLE
 
         mPostsReference = FirebaseDatabase.getInstance().getReference("Posts")
     }
 
     override fun onStart() {
         super.onStart()
-
+        postsList = ArrayList<Post>()
         val messageListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var snapshotIterable: Iterable<DataSnapshot>  = dataSnapshot.children
                 var iterator: Iterator<DataSnapshot> = snapshotIterable.iterator()
                 while (iterator.hasNext()){
                     val post = iterator.next()
-                    /*if(post is Map<*, *>){
-                        Log.i(TAG, "${post.get("challenge")}")
-                    }else{
-                        Log.i(TAG, "${post.child("challenge")} from else")
-                    }
-                    Log.e(TAG, "${iterator.next().get}")
-                    val post = iterator.next().getValue(Post::class.java)
-                    postsList.add(post!!)*/
+
                     val objPost = Post(post.child("challenge").value.toString()
                         ,post.child("tag").value.toString(),
                         post.child("description").value.toString(),
@@ -83,6 +80,9 @@ class NavigationActivity : AppCompatActivity() {
                         post.child("state").value.toString().toInt())
                     postsList.add(objPost!!)
                 }
+                //delete spinner
+                loader_posts.visibility = View.GONE
+                frame_container.visibility = View.VISIBLE
                 val fragment = PostsFragment()
                 addFragment(fragment)
             }

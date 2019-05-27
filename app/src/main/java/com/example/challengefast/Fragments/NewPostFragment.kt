@@ -2,8 +2,10 @@ package com.example.challengefast.Fragments
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,6 +25,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.new_post_form_fragment.*
+import java.io.IOException
 
 class NewPostFragment : Fragment() {
     var newPost: Post? = null
@@ -68,9 +71,8 @@ class NewPostFragment : Fragment() {
             //open gallery
             val intent = Intent()
             intent.type = "image/*"
-            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             intent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_PICK_PHOTO)
+            startActivityForResult(intent, REQUEST_PICK_PHOTO)
         }
     }
 
@@ -110,12 +112,9 @@ class NewPostFragment : Fragment() {
                     Toast.makeText(context,task.exception!!.message,Toast.LENGTH_SHORT).show()
                 }
             }
-            /*imgFilePath.putFile(uriPhoto).addOnSuccessListener { taskSnapshot ->
-
-            }.addOnFailureListener { error ->
-
-            }*/
         }else{
+            submit_new_post.visibility = View.VISIBLE
+            spinner_progress.visibility = View.INVISIBLE
             Toast.makeText(context, "You must fill all inputs", Toast.LENGTH_SHORT).show()
         }
     }
@@ -124,7 +123,8 @@ class NewPostFragment : Fragment() {
         post.key =  postRef.key.toString()
         postRef.setValue(post).addOnSuccessListener { taskSnapshot ->
             Toast.makeText(context, "Challenge added successfully", Toast.LENGTH_SHORT).show()
-            NavigationActivity.postsList.add(newPost!!)
+            //NavigationActivity.postsList.add(newPost!!)
+            Log.i("FRG","moving next fragmnet")
             loadNextFragment()
         }.addOnFailureListener { error ->
             submit_new_post.visibility = View.VISIBLE
@@ -140,20 +140,33 @@ class NewPostFragment : Fragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_PICK_PHOTO) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data == null) {
                     Toast.makeText(context, "An error have been occured", Toast.LENGTH_SHORT).show()
                     Log.i("MEDIA","An error have been occured")
+                }else{
+                    uriPhoto= data?.data!!
+                    try
+                    {
+                        val bitmap = MediaStore.Images.Media.getBitmap(context!!.contentResolver, uriPhoto)
+                        Toast.makeText(context, "Image Saved!", Toast.LENGTH_SHORT).show()
+                        Log.i("MEDIA","Photo picked ${uriPhoto} from data")
+                        displayImage(bitmap)
+
+                    }
+                    catch (e: IOException) {
+                        e.printStackTrace()
+                        Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show()
+                    }
                 }
-                uriPhoto= data?.data!!
-                Log.i("MEDIA","Photo picked ${uriPhoto} from data")
-                displayImage(this.uriPhoto!!)
             }
         }
     }
-    fun displayImage(image: Uri) {
-        picked_media_photo.setImageURI(image)
+    fun displayImage(image: Bitmap) {
+        picked_media_photo.setImageBitmap(image)
+        Log.i("MEDIA","display image ${uriPhoto}")
         //for test i use from drawable my phone is sick hhhh
         //picked_media_photo.setImageResource(R.drawable.bcg_dark)
         delete_picked_media.visibility = View.VISIBLE
