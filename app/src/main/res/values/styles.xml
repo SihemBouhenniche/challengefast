@@ -12,7 +12,9 @@
         <item name="fontFamily">@font/maiden_orange</item>
     </style>
 
+
     <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorPrimary">@color/colorPrimaryDark</item>
     </style>
+
 </resources>

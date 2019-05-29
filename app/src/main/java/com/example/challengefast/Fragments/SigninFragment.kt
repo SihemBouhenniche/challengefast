@@ -1,6 +1,5 @@
 package com.example.challengefast.Fragments
 
-
 import android.app.ProgressDialog
 import android.content.Intent
 import android.content.SharedPreferences
@@ -16,12 +15,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.challengefast.Activities.NavigationActivity
+import com.example.challengefast.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.signin_fragment.*
-
-
-
-
 
 
 class SigninFragment : Fragment() {
@@ -31,6 +27,7 @@ class SigninFragment : Fragment() {
     private var email: String? = null
     private var password: String? = null
     //UI elements
+
     private  var sp: SharedPreferences? = null
     private var etEmail: EditText? = null
     private var etPassword: EditText? = null
@@ -42,15 +39,20 @@ class SigninFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
     }
 
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView = inflater!!.inflate(com.example.challengefast.R.layout.signin_fragment, container, false)
+        var rootView = inflater!!.inflate(R.layout.signin_fragment, container, false)
+
         return rootView
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
 
         submit_signin.setOnClickListener(View.OnClickListener {
 
@@ -94,13 +96,15 @@ class SigninFragment : Fragment() {
 
 
 
+
                         sp=activity!!.getSharedPreferences("login", AppCompatActivity.MODE_PRIVATE);
                         val e = sp!!.edit()
                         e.putString("username", email)
 
                         e.putString("password", password)
                         e.commit()
-                        var intent : Intent = Intent(activity,NavigationActivity::class.java)
+
+                        var intent : Intent = Intent(activity, NavigationActivity::class.java)
                         startActivity(intent)
                     } else {
                         // If sign in fails, display a message to the user.
@@ -122,9 +126,12 @@ class SigninFragment : Fragment() {
                 .sendPasswordResetEmail(email)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+
                         val message = "Please check your email to reset your password "
                         Log.d(TAG, message)
                         Toast.makeText(this.activity, message, Toast.LENGTH_SHORT).show()
+
+
 
 
                     } else {

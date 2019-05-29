@@ -13,6 +13,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import com.example.challengefast.Fragments.SigninFragment
 import com.example.challengefast.Fragments.SignupFragment
+import com.example.challengefast.R
 
 
 
@@ -54,7 +55,10 @@ class HomeScreenActivity : AppCompatActivity() {
             val fragment = SignupFragment()
             addFragment(fragment)
         })
-        findViewById<Button>(com.example.challengefast.R.id.signin).setOnClickListener(View.OnClickListener {
+
+
+        findViewById<Button>(R.id.signin).setOnClickListener(View.OnClickListener {
+
             val fragment = SigninFragment()
             addFragment(fragment)
         })
@@ -63,10 +67,12 @@ class HomeScreenActivity : AppCompatActivity() {
     private fun addFragment(fragment: android.support.v4.app.Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .setCustomAnimations(com.example.challengefast.R.anim.design_bottom_sheet_slide_in, com.example.challengefast.R.anim.design_bottom_sheet_slide_out)
+.setCustomAnimations(com.example.challengefast.R.anim.design_bottom_sheet_slide_in, com.example.challengefast.R.anim.design_bottom_sheet_slide_out)
             .replace(com.example.challengefast.R.id.container_form, fragment, fragment.javaClass.getSimpleName())
             .addToBackStack(fragment.javaClass.getSimpleName())
             .commit()
     }
 
 }
+
+

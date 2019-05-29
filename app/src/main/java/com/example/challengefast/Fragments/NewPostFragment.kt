@@ -2,6 +2,7 @@ package com.example.challengefast.Fragments
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -27,7 +28,6 @@ class NewPostFragment : Fragment() {
     var newPost: Post? = null
     private val REQUEST_PICK_PHOTO = 1
     private var uriPhoto: Uri = Uri.EMPTY
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -63,7 +63,7 @@ class NewPostFragment : Fragment() {
     //private function open gallery
     private fun openGallery(){
         if (uriPhoto != Uri.EMPTY) {
-           // Toast.makeText(context, "You can't pick other photo", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "You can't pick other photo", Toast.LENGTH_SHORT).show()
         } else {
             //open gallery
             val intent = Intent()
@@ -106,13 +106,13 @@ class NewPostFragment : Fragment() {
                 } else {
                     submit_new_post.visibility = View.VISIBLE
                     spinner_progress.visibility = View.INVISIBLE
-                    //Toast.makeText(context,task.exception!!.message,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,task.exception!!.message,Toast.LENGTH_SHORT).show()
                 }
             }
         }else{
             submit_new_post.visibility = View.VISIBLE
             spinner_progress.visibility = View.INVISIBLE
-           // Toast.makeText(context, "You must fill all inputs", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "You must fill all inputs", Toast.LENGTH_SHORT).show()
         }
     }
     private fun putPostInFirebase(post: Post){
@@ -122,11 +122,11 @@ class NewPostFragment : Fragment() {
             Toast.makeText(context, "Challenge added successfully", Toast.LENGTH_SHORT).show()
             //NavigationActivity.postsList.add(newPost!!)
             Log.i("FRG","moving next fragmnet")
-            //loadNextFragment()
+            loadNextFragment()
         }.addOnFailureListener { error ->
             submit_new_post.visibility = View.VISIBLE
             spinner_progress.visibility = View.INVISIBLE
-           // Toast.makeText(context,error.message,Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,error.message,Toast.LENGTH_SHORT).show()
         }
     }
     //private fucntion for delete picked image
@@ -141,16 +141,16 @@ class NewPostFragment : Fragment() {
         if (requestCode == REQUEST_PICK_PHOTO) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data == null) {
-                   // Toast.makeText(context, "An error have been occured", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "An error have been occured", Toast.LENGTH_SHORT).show()
                     Log.i("MEDIA","An error have been occured")
                 }else{
                     uriPhoto= data?.data!!
                     try
                     {
-                        val bitmap = MediaStore.Images.Media.getBitmap(activity!!.contentResolver, uriPhoto)
-                        //Toast.makeText(context, "Image Saved!", Toast.LENGTH_SHORT).show()
+                        val bitmap = MediaStore.Images.Media.getBitmap(context!!.contentResolver, uriPhoto)
+                        Toast.makeText(context, "Image Saved!", Toast.LENGTH_SHORT).show()
                         Log.i("MEDIA","Photo picked ${uriPhoto} from data")
-                        displayImage(uriPhoto)
+                        displayImage(bitmap)
 
                     }
                     catch (e: IOException) {
@@ -161,13 +161,12 @@ class NewPostFragment : Fragment() {
             }
         }
     }
-    fun displayImage(image: Uri) {
-        //picked_media_photo.setImageBitmap(image)
-        picked_media_photo.setImageURI(image)
+    fun displayImage(image: Bitmap) {
+        picked_media_photo.setImageBitmap(image)
         Log.i("MEDIA","display image ${uriPhoto}")
         //for test i use from drawable my phone is sick hhhh
         //picked_media_photo.setImageResource(R.drawable.bcg_dark)
-        //delete_picked_media.visibility = View.VISIBLE
+        delete_picked_media.visibility = View.VISIBLE
     }
 
     private fun loadNextFragment(){

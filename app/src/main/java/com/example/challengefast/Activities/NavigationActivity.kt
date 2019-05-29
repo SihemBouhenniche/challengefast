@@ -10,14 +10,16 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.challengefast.Fragment.ProfileFragment
 import com.example.challengefast.Fragments.NewPostFragment
 import com.example.challengefast.Fragments.PostsFragment
-import com.example.challengefast.Fragments.ProfileFragment
 import com.example.challengefast.Models.Post
 import com.example.challengefast.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_navigation.*
+
+
 
 class NavigationActivity : AppCompatActivity() {
     private val TAG = "UtilityActivity"
@@ -27,11 +29,13 @@ class NavigationActivity : AppCompatActivity() {
 
     private var mPostsReference: DatabaseReference? = null
     private var mPostsListener: ValueEventListener? = null
+
     private var mAuth: FirebaseAuth? = null
 
 init {
     mAuth = FirebaseAuth.getInstance()
 }
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -48,7 +52,8 @@ init {
             R.id.navigation_profile -> {
                 val fragment = ProfileFragment()
                 addFragment(fragment)
-                Log.i("FRG","profile fragment")
+
+
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -68,6 +73,7 @@ init {
         frame_container.visibility = View.INVISIBLE
 
         mPostsReference = FirebaseDatabase.getInstance().getReference("Posts")
+
         user_top_logo.setOnClickListener{
 
                 showLogOutDialog()
@@ -109,7 +115,7 @@ init {
     private fun logOut ()
     {
         mAuth!!.signOut()
-        val sp:SharedPreferences=getSharedPreferences("login", AppCompatActivity.MODE_PRIVATE);
+        val sp: SharedPreferences =getSharedPreferences("login", AppCompatActivity.MODE_PRIVATE);
         val e = sp!!.edit()
         e.remove("username")
         e.remove("password")

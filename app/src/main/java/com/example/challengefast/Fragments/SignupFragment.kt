@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.Toast
-
 import com.example.challengefast.Activities.NavigationActivity
 import com.example.challengefast.Adapters.CountrySpinnerAdapter
 import com.example.challengefast.R
@@ -22,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.signup_fragment.*
+
 
 class SignupFragment : Fragment() {
     lateinit var countrySpinner: Spinner
@@ -76,13 +76,15 @@ class SignupFragment : Fragment() {
                     val userId = mAuth!!.currentUser!!.uid
                     //Verify Email
                     verifyEmail()
+
                     val sp=activity!!.getSharedPreferences("login", AppCompatActivity.MODE_PRIVATE);
                     val e = sp!!.edit()
                     e.putString("username", email)
 
                     e.putString("password", password)
                     e.commit()
-                    var intent : Intent = Intent(activity,NavigationActivity::class.java)
+
+                    var intent : Intent = Intent(activity, NavigationActivity::class.java)
                     startActivity(intent)
                     //update user profile information
                     val currentUserDb = mDatabaseReference!!.child(userId)

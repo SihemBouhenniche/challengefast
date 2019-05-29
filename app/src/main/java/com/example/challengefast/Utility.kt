@@ -2,6 +2,7 @@ package com.example.challengefast
 import com.example.challengefast.Models.Country
 import com.example.challengefast.Models.Post
 
+
 internal class Utility {
     companion object {
         val COUNTRY_DATA_SOURCE: List<Country> = object : ArrayList<Country>() {
@@ -121,9 +122,15 @@ internal class Utility {
                 add(Country("263", "Zimbabwe", "ZW"))
             }
         }
+
         var PostsDataSource = arrayListOf<Post>(Post("Collectif Iftar", "#Iftar_Jama3i", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
                 "non-judgmental environment. see more... ", ""),Post("Ta7fid Qran", "#60_7izb", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
                 "non-judgmental environment. see more... ", ""))
+
+        /*var PostsDataSource = arrayListOf<Post>(Post("Collectif Iftar", "#Iftar_Jama3i", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
+                "non-judgmental environment. see more... ", ""),Post("Ta7fid Qran", "#60_7izb", "Meet other Muslims. Get together and have a forum to discuss Islam in a \n" +
+                "non-judgmental environment. see more... ", ""))*/
+
 
     }
 

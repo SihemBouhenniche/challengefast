@@ -22,10 +22,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"/>
         <ImageView
                 android:layout_width="70dp"
-                android:layout_height="0dp"
+
                 app:srcCompat="@drawable/user_man"
                 android:clickable="true"
                 android:id="@+id/user_top_logo" app:layout_constraintTop_toTopOf="parent"
+
+                android:layout_height="0dp"
+
+
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"/>
