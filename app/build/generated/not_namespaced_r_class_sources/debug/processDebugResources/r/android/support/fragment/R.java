@@ -100,7 +100,6 @@ public final class R {
         public static final int forever = 0x7f0a0062;
         public static final int icon = 0x7f0a006c;
         public static final int icon_group = 0x7f0a006d;
-<<<<<<< HEAD
         public static final int info = 0x7f0a0078;
         public static final int italic = 0x7f0a007a;
         public static final int left = 0x7f0a007f;
@@ -123,30 +122,6 @@ public final class R {
         public static final int time = 0x7f0a00f7;
         public static final int title = 0x7f0a00f8;
         public static final int top = 0x7f0a00fc;
-=======
-        public static final int info = 0x7f0a0079;
-        public static final int italic = 0x7f0a007b;
-        public static final int left = 0x7f0a0080;
-        public static final int line1 = 0x7f0a0082;
-        public static final int line3 = 0x7f0a0083;
-        public static final int none = 0x7f0a0099;
-        public static final int normal = 0x7f0a009a;
-        public static final int notification_background = 0x7f0a009b;
-        public static final int notification_main_column = 0x7f0a009c;
-        public static final int notification_main_column_container = 0x7f0a009d;
-        public static final int right = 0x7f0a00ad;
-        public static final int right_icon = 0x7f0a00ae;
-        public static final int right_side = 0x7f0a00af;
-        public static final int start = 0x7f0a00dd;
-        public static final int tag_transition_group = 0x7f0a00e7;
-        public static final int tag_unhandled_key_event_manager = 0x7f0a00e8;
-        public static final int tag_unhandled_key_listeners = 0x7f0a00e9;
-        public static final int text = 0x7f0a00ea;
-        public static final int text2 = 0x7f0a00eb;
-        public static final int time = 0x7f0a00f8;
-        public static final int title = 0x7f0a00f9;
-        public static final int top = 0x7f0a00fd;
->>>>>>> origin/master
     }
     public static final class integer {
         private integer() {}
@@ -171,7 +146,6 @@ public final class R {
     public static final class style {
         private style() {}
 
-<<<<<<< HEAD
         public static final int TextAppearance_Compat_Notification = 0x7f110116;
         public static final int TextAppearance_Compat_Notification_Info = 0x7f110117;
         public static final int TextAppearance_Compat_Notification_Line2 = 0x7f110119;
@@ -180,16 +154,6 @@ public final class R {
         public static final int Widget_Compat_NotificationActionContainer = 0x7f1101c6;
         public static final int Widget_Compat_NotificationActionText = 0x7f1101c7;
         public static final int Widget_Support_CoordinatorLayout = 0x7f1101f6;
-=======
-        public static final int TextAppearance_Compat_Notification = 0x7f110115;
-        public static final int TextAppearance_Compat_Notification_Info = 0x7f110116;
-        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f110118;
-        public static final int TextAppearance_Compat_Notification_Time = 0x7f11011b;
-        public static final int TextAppearance_Compat_Notification_Title = 0x7f11011d;
-        public static final int Widget_Compat_NotificationActionContainer = 0x7f1101c5;
-        public static final int Widget_Compat_NotificationActionText = 0x7f1101c6;
-        public static final int Widget_Support_CoordinatorLayout = 0x7f1101f5;
->>>>>>> origin/master
     }
     public static final class styleable {
         private styleable() {}
