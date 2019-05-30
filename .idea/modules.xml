@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChallengeFast.iml" filepath="$PROJECT_DIR$/ChallengeFast.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/challengefast-master.iml" filepath="$PROJECT_DIR$/.idea/challengefast-master.iml" />
     </modules>
   </component>
 </project>

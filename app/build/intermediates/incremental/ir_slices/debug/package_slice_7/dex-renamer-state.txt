@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Wed May 29 01:13:49 WAT 2019
-base.0=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
-=======
-#Tue May 28 00:09:57 CEST 2019
+#Thu May 30 02:19:08 CEST 2019
 base.0=C\:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
->>>>>>> origin/master
 path.0=classes.dex
 renamed.0=classes.dex

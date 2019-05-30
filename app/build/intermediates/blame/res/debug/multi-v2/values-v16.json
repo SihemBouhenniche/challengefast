@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\marwa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\413d775041a8bc0a9ea7c2a283f1198c\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\6352f898bcf222263ef5d8cab26c1949\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\marwa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\65e73036ba5f08c03f4ebc4bea5bd439\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\295d17fb3123ee7dd2a9071fa90bb062\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

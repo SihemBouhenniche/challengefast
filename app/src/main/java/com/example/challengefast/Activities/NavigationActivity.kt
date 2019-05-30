@@ -14,6 +14,7 @@ import com.example.challengefast.Fragment.ProfileFragment
 import com.example.challengefast.Fragments.NewPostFragment
 import com.example.challengefast.Fragments.PostsFragment
 import com.example.challengefast.Models.Post
+import com.example.challengefast.Models.Star
 import com.example.challengefast.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -127,9 +128,9 @@ init {
 
     override fun onStart() {
         super.onStart()
-        postsList = ArrayList<Post>()
         val messageListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                postsList = ArrayList<Post>()
                 var snapshotIterable: Iterable<DataSnapshot>  = dataSnapshot.children
                 var iterator: Iterator<DataSnapshot> = snapshotIterable.iterator()
                 while (iterator.hasNext()){
@@ -140,14 +141,27 @@ init {
                         post.child("description").value.toString(),
                         post.child("media").value.toString(),
                         post.child("key").value.toString(),
-                        post.child("state").value.toString().toInt())
+                        post.child("state").value.toString().toInt(),
+                        post.child("userId").value.toString())
+                    val starsList = ArrayList<Star>()
+                    var snapshotIterableStar: Iterable<DataSnapshot>  = post.child("stars").children
+                    var iteratorStar: Iterator<DataSnapshot> = snapshotIterableStar.iterator()
+                    while (iteratorStar.hasNext()){
+                        val star = iteratorStar.next()
+                        val objStar = Star(star.value.toString())
+                        starsList.add(objStar)
+                    }
+                    objPost.stars = starsList
                     postsList.add(objPost!!)
                 }
-                //delete spinner
-                loader_posts.visibility = View.GONE
-                frame_container.visibility = View.VISIBLE
-                val fragment = PostsFragment()
-                addFragment(fragment)
+
+                if(frame_container.childCount == 0){//we are in the first interaction after login in
+                    //delete spinner
+                    loader_posts.visibility = View.GONE
+                    frame_container.visibility = View.VISIBLE
+                    val fragment = PostsFragment()
+                    addFragment(fragment)
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

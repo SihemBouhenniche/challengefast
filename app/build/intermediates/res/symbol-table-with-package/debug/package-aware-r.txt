@@ -1355,6 +1355,8 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id comment_btn
+id comment_btn_details
+id comments_count_details
 id constraintLayout
 id constraintLayout3
 id container
@@ -1369,6 +1371,7 @@ id dark
 id decor_content_parent
 id default_activity_button
 id delete_picked_media
+id description_details
 id description_post
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1399,6 +1402,7 @@ id fixed
 id floatingActionButton
 id forever
 id fork_post
+id fork_post_details
 id frame_container
 id ghost_view
 id gone
@@ -1436,6 +1440,7 @@ id loader_posts
 id logo
 id masked
 id media_actions
+id media_details
 id media_post
 id message
 id middle
@@ -1497,6 +1502,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id share_btn
+id share_btn_details
 id shortcut
 id showCustom
 id showHome
@@ -1519,6 +1525,8 @@ id src_in
 id src_over
 id standard
 id star_btn
+id star_btn_details
+id stars_count_details
 id start
 id status_bar_latest_event_content
 id stretch
@@ -1528,6 +1536,7 @@ id submit_new_post
 id submit_signin
 id submit_signup
 id tabMode
+id tag_details
 id tag_post
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1549,6 +1558,7 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id title_details
 id title_post
 id title_template
 id top
@@ -1564,10 +1574,13 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_country_details
 id user_country_post
+id user_full_name_details
 id user_full_name_post
 id user_full_name_profile
 id user_photo
+id user_photo_details
 id user_top_logo
 id view_offset_helper
 id visible
@@ -1658,6 +1671,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout post_details_fragment
 layout post_layout
 layout posts_fragment
 layout profile_fragment

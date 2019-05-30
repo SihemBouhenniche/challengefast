@@ -1,21 +1,5 @@
 #Internal package file, do not edit.
-<<<<<<< HEAD
-#Wed May 29 03:09:57 WAT 2019
-1.base=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
-2.path=classes.dex
-0.baseType=DIRECTORY
-2.base=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-2.set=DEX
-1.baseType=DIRECTORY
-count=3
-1.set=DEX
-0.path=classes.dex
-0.set=DEX
-0.base=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
-2.baseType=DIRECTORY
-1.path=classes.dex
-=======
-#Tue May 28 00:58:25 CEST 2019
+#Thu May 30 02:19:09 CEST 2019
 4.path=classes.dex
 8.set=DEX
 6.path=classes.dex
@@ -61,4 +45,3 @@ count=11
 0.path=classes.dex
 1.set=DEX
 2.path=classes.dex
->>>>>>> origin/master

@@ -16,6 +16,7 @@ import com.example.challengefast.Models.Post
 import com.example.challengefast.R
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -28,6 +29,8 @@ class NewPostFragment : Fragment() {
     var newPost: Post? = null
     private val REQUEST_PICK_PHOTO = 1
     private var uriPhoto: Uri = Uri.EMPTY
+    private var mAuth: FirebaseAuth? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -94,12 +97,15 @@ class NewPostFragment : Fragment() {
                 return@Continuation imgFilePath.downloadUrl
             }).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    mAuth = FirebaseAuth.getInstance()
+                    val mUserUid = mAuth!!.currentUser!!.uid
                     //create new post
                     newPost = Post(
                         title,
                         tag,
                         description,
-                        task.result.toString()
+                        task.result.toString(),
+                        mUserUid
                     )
                     //add post to firebase database
                     putPostInFirebase(newPost!!)

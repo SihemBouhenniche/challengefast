@@ -1,146 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
-
-    api-level="22"
-    build-mode="HOT_WARM"
+    api-level="24"
+    build-mode="COLD"
     density="xhdpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1559089159413"
-    token="-406723229830207869"
-    verifier="COMPATIBLE" >
+    timestamp="1559175643027"
+    token="7687920323906792582"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
         duration="0" />
     <task
         name="instant-run-dex"
-        duration="281" />
-    <task
-        name="instant-run-transform"
-        duration="986" />
-    <task
-        name="verifier"
-        duration="194" />
-
-    <artifact
-        location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
-
-    <build
-        build-mode="FULL"
-        timestamp="1559088996198"
-        verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1559089159413"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\marwa\Desktop\Dossier6\hackathon_Ramadhan\challengefast-master\challengefast-master\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-
-    <task
-        name="javac"
-        duration="179" />
-    <task
-        name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="51" />
+        duration="0" />
     <task
         name="verifier"
-        duration="16" />
-
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
+        duration="0" />
 
     <build
         build-mode="FULL"
-        timestamp="1559000345448"
+        timestamp="1559175531160"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
         <artifact
             location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -148,27 +34,39 @@
             location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-
+        <artifact
+            location="C:\Users\nabou\Music\ChallengeFast\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
     </build>
+    <build
+        build-mode="COLD"
+        timestamp="1559175643027"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

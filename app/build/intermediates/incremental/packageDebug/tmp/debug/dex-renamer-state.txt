@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-#Wed May 29 03:09:57 WAT 2019
-path.2=classes.dex
-path.1=classes.dex
-path.0=classes.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
-renamed.0=classes.dex
-base.2=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
-base.1=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
-base.0=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast-master\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-=======
-#Tue May 28 00:58:25 CEST 2019
+#Thu May 30 02:19:09 CEST 2019
 path.1=classes.dex
 path.0=classes.dex
 renamed.10=classes11.dex
@@ -44,4 +32,3 @@ path.5=classes.dex
 path.4=classes.dex
 path.3=classes.dex
 path.2=classes.dex
->>>>>>> origin/master
