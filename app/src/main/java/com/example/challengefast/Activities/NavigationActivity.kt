@@ -140,7 +140,7 @@ init {
                         ,post.child("tag").value.toString(),
                         post.child("description").value.toString(),
                         post.child("media").value.toString(),
-                        post.child("key").value.toString(),
+                        post.key.toString(),
                         post.child("state").value.toString().toInt(),
                         post.child("userId").value.toString())
                     val starsList = ArrayList<Star>()
@@ -148,7 +148,8 @@ init {
                     var iteratorStar: Iterator<DataSnapshot> = snapshotIterableStar.iterator()
                     while (iteratorStar.hasNext()){
                         val star = iteratorStar.next()
-                        val objStar = Star(star.value.toString())
+                        val objStar = Star(star.child("userId").value.toString())
+                        objStar.key = star.key.toString()
                         starsList.add(objStar)
                     }
                     objPost.stars = starsList

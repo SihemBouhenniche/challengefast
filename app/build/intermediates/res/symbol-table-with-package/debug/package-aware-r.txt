@@ -1527,6 +1527,7 @@ id standard
 id star_btn
 id star_btn_details
 id stars_count_details
+id stars_count_post
 id start
 id status_bar_latest_event_content
 id stretch

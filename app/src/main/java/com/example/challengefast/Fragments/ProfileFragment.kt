@@ -44,7 +44,7 @@ class ProfileFragment : Fragment() {
                 val last_name=snapshot . child ("lastName").value!! as String
                 val first_name=snapshot . child ("firstName").value!! as String
                 val full_name :String =last_name.plus(" ").plus(first_name)
-               user_full_name_profile.text = full_name
+                user_full_name_profile.text = full_name
                 country_profile.text= snapshot . child ("country").value!! as String
             }
 

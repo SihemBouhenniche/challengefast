@@ -38,12 +38,4 @@ class Post {
         this.media = media
         this.userId = userUid
     }
-
-    fun getStarsCount() : Int{
-        return this.stars.size
-    }
-
-    fun getCommentsCount() : Int{
-        return this.comments.size
-    }
 }
