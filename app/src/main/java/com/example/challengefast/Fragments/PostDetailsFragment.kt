@@ -1,5 +1,6 @@
 package com.example.challengefast.Fragments
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,16 +9,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.challengefast.Activities.NavigationActivity
+import com.example.challengefast.Adapters.CommentsAdapter
+import com.example.challengefast.Models.Comment
 import com.example.challengefast.Models.Post
 import com.example.challengefast.Models.Star
 
 import com.example.challengefast.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.comment_layout.*
 import kotlinx.android.synthetic.main.post_details_fragment.*
+
 
 
 class PostDetailsFragment : Fragment() {
@@ -33,9 +39,14 @@ class PostDetailsFragment : Fragment() {
     private var mUserReference: DatabaseReference? = null
     private var mUserListener: ValueEventListener? = null
 
+    //vars for comments
+    var commentsList : ListView ?= null
+    var commentsAdapter:CommentsAdapter ?= null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         item = NavigationActivity.postsList.elementAt(position)
+        commentsAdapter = CommentsAdapter(context!!,NavigationActivity.postsList.get(position).comments)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -46,6 +57,7 @@ class PostDetailsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         mDatabase = FirebaseDatabase.getInstance()
         //display data inside layout :
         //put data
@@ -61,7 +73,7 @@ class PostDetailsFragment : Fragment() {
                 tag_details.text = p0.child("tag").value.toString()
                 description_details.text = p0.child("description").value.toString()
                 stars_count_details.text = p0.child("stars").children.count().toString() + " stars"
-
+                comments_count_details.text = p0.child("comments").children.count().toString() + " comment"
                 //media data
                 var imageView : ImageView = media_details
                 Glide.with(context)
@@ -100,6 +112,39 @@ class PostDetailsFragment : Fragment() {
                     }
                 }
 
+                //set submit_comment_btn listner
+                submit_comment_btn.setOnClickListener{
+                    if(comment_text.text != ""){
+                        var comment = Comment(mUserUid,comment_field.text.toString())
+                        val commentsRef = mDatabase!!.reference!!.child("Posts").child(item.key).child("comments").push()
+                        comment.key =  commentsRef.key.toString()
+                        commentsRef.setValue(comment).addOnSuccessListener { taskSnapshot ->
+                            Toast.makeText(context, "You added a comment the challenge", Toast.LENGTH_SHORT).show()
+
+                        }.addOnFailureListener { error ->
+                            Toast.makeText(context,error.message,Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+
+                //set on load all comments
+                comment_btn_details.setOnClickListener {
+                    loadNextFragment(position)
+                }
+                load_comment_fragment_btn.setOnClickListener {
+                    loadNextFragment(position)
+                }
+
+                //set on share btn
+                share_btn_details.setOnClickListener{
+                    val sendIntent: Intent = Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, p0.child("challenge").value.toString())
+                        type = "text/plain"
+                    }
+                    context!!.startActivity(Intent.createChooser(sendIntent, "Share challenge in : "))
+                }
+
             }
         }
 
@@ -124,7 +169,16 @@ class PostDetailsFragment : Fragment() {
         mUserReference!!.addValueEventListener(mUserListener!!)
 
 
+        //set the comments
+        commentsList = activity!!.findViewById(R.id.comments_list)
+
+        commentsAdapter!!.postKEY = item.key
+        commentsList!!.adapter = commentsAdapter
+
+
+
     }
+
     private fun likePost(userId : String){
         star_btn_details.setBackgroundResource(R.drawable.ic_star)
         var star = Star(userId)
@@ -156,6 +210,17 @@ class PostDetailsFragment : Fragment() {
         super.onStop()
         mPostReference!!.removeEventListener(mPostListener!!)
         mUserReference!!.removeEventListener(mUserListener!!)
+    }
+
+    private fun loadNextFragment(position: Int){
+        var fragment = CommentsFragment()
+        fragment.position = position
+        activity!!.supportFragmentManager
+            .beginTransaction()
+            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+            .replace(R.id.frame_container, fragment, fragment.javaClass.getSimpleName())
+            .addToBackStack(fragment.javaClass.getSimpleName())
+            .commit()
     }
 
 }

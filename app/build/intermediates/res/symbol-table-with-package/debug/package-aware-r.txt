@@ -1356,7 +1356,12 @@ id clip_vertical
 id collapseActionView
 id comment_btn
 id comment_btn_details
+id comment_field
+id comment_field_frg
+id comment_text
 id comments_count_details
+id comments_list
+id comments_list_fragment
 id constraintLayout
 id constraintLayout3
 id container
@@ -1420,6 +1425,7 @@ id imageView
 id imageView2
 id imageView3
 id imageView4
+id imageView5
 id imageView7
 id imageView8
 id imgflag
@@ -1436,6 +1442,7 @@ id line1
 id line3
 id listMode
 id list_item
+id load_comment_fragment_btn
 id loader_posts
 id logo
 id masked
@@ -1487,6 +1494,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_view
 id scrollable
 id search_badge
 id search_bar
@@ -1533,6 +1541,8 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id submit_comment_btn
+id submit_comment_btn_frg
 id submit_new_post
 id submit_signin
 id submit_signup
@@ -1575,8 +1585,10 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_country_comment
 id user_country_details
 id user_country_post
+id user_full_name_comment
 id user_full_name_details
 id user_full_name_post
 id user_full_name_profile
@@ -1639,6 +1651,8 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_home_screen
 layout activity_navigation
+layout comment_layout
+layout comments_fragment
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

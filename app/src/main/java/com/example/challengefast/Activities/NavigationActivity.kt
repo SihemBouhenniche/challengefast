@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.example.challengefast.Fragment.ProfileFragment
 import com.example.challengefast.Fragments.NewPostFragment
 import com.example.challengefast.Fragments.PostsFragment
+import com.example.challengefast.Models.Comment
 import com.example.challengefast.Models.Post
 import com.example.challengefast.Models.Star
 import com.example.challengefast.R
@@ -143,6 +144,8 @@ init {
                         post.key.toString(),
                         post.child("state").value.toString().toInt(),
                         post.child("userId").value.toString())
+
+                    //adding stars list
                     val starsList = ArrayList<Star>()
                     var snapshotIterableStar: Iterable<DataSnapshot>  = post.child("stars").children
                     var iteratorStar: Iterator<DataSnapshot> = snapshotIterableStar.iterator()
@@ -153,6 +156,19 @@ init {
                         starsList.add(objStar)
                     }
                     objPost.stars = starsList
+
+                    //adding comments list
+                    val commentsList = ArrayList<Comment>()
+                    var snapshotIterableComment: Iterable<DataSnapshot>  = post.child("comments").children
+                    var iteratorComment: Iterator<DataSnapshot> = snapshotIterableComment.iterator()
+                    while (iteratorComment.hasNext()){
+                        val comment = iteratorComment.next()
+                        val objComment = Comment(comment.child("userId").value.toString(),comment.child("comment").value.toString())
+                        objComment.key = comment.key.toString()
+                        commentsList.add(objComment)
+                    }
+                    objPost.comments = commentsList
+
                     postsList.add(objPost!!)
                 }
 

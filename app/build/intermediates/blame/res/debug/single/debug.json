@@ -1516,6 +1516,10 @@
         "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\295d17fb3123ee7dd2a9071fa90bb062\\res\\color\\abc_search_url_text.xml"
     },
     {
+        "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\layout_comment_layout.xml.flat",
+        "source": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\src\\main\\res\\layout\\comment_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\295d17fb3123ee7dd2a9071fa90bb062\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
@@ -2510,6 +2514,10 @@
     {
         "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\nabou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\6352f898bcf222263ef5d8cab26c1949\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\layout_comments_fragment.xml.flat",
+        "source": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\src\\main\\res\\layout\\comments_fragment.xml"
     },
     {
         "merged": "C:\\Users\\nabou\\Music\\ChallengeFast\\app\\build\\intermediates\\res\\merged\\debug\\layout_profile_fragment.xml.flat",

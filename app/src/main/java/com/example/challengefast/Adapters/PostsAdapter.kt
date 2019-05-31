@@ -1,6 +1,7 @@
 package com.example.challengefast.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.challengefast.Activities.NavigationActivity
+import com.example.challengefast.Fragments.CommentsFragment
 import com.example.challengefast.Fragments.PostDetailsFragment
 import com.example.challengefast.Models.Post
 import com.example.challengefast.Models.Star
@@ -61,6 +63,18 @@ class PostsAdapter : BaseAdapter {
                 layoutItem.tag_post.text = p0.child("tag").value.toString()
                 layoutItem.description_post.text = p0.child("description").value.toString()
                 layoutItem.stars_count_post.text = p0.child("stars").children.count().toString() + " stars"
+                layoutItem.share_btn.setOnClickListener{
+                    val sendIntent: Intent = Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, p0.child("challenge").value.toString())
+                        type = "text/plain"
+                    }
+                    context!!.startActivity(Intent.createChooser(sendIntent, "Share challenge in : "))
+                }
+
+                layoutItem.comment_btn.setOnClickListener {
+                    loadCommentsFragment(position)
+                }
 
                 //media data
                 var imageView : ImageView = layoutItem.findViewById(R.id.media_post)
@@ -125,7 +139,6 @@ class PostsAdapter : BaseAdapter {
         mUserReference!!.addValueEventListener(mUserListener!!)
 
 
-
         return layoutItem
     }
 
@@ -185,4 +198,14 @@ class PostsAdapter : BaseAdapter {
         return modelList.size
     }
 
+    private fun loadCommentsFragment(position: Int){
+        var fragment = CommentsFragment()
+        fragment.position = position
+        (context as NavigationActivity)!!.supportFragmentManager
+            .beginTransaction()
+            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+            .replace(R.id.frame_container, fragment, fragment.javaClass.getSimpleName())
+            .addToBackStack(fragment.javaClass.getSimpleName())
+            .commit()
+    }
 }
