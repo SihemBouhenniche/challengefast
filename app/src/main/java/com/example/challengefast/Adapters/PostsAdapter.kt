@@ -7,11 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import com.bumptech.glide.Glide
 import com.example.challengefast.Activities.NavigationActivity
+import com.example.challengefast.Filters.PostFilter
 import com.example.challengefast.Fragments.CommentsFragment
 import com.example.challengefast.Fragments.PostDetailsFragment
 import com.example.challengefast.Models.Post
@@ -22,15 +21,25 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.post_details_fragment.*
 import kotlinx.android.synthetic.main.post_layout.view.*
 
-class PostsAdapter : BaseAdapter {
+class PostsAdapter : BaseAdapter, Filterable {
+
+    var filteredList = ArrayList<Post>()
+    var listFilter :PostFilter? = null
     var context : Context?= null
     var modelList = ArrayList<Post>()
 
+    override fun getFilter(): Filter? {
+        if (listFilter == null) {
+            listFilter= PostFilter(this)
+        }
 
+        return listFilter
+    }
 
     constructor(context : Context,modelList: ArrayList<Post>){
         this.context = context
         this.modelList = modelList
+        this.filteredList = this.modelList
     }
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var mDatabase: FirebaseDatabase? = null
@@ -48,7 +57,7 @@ class PostsAdapter : BaseAdapter {
         mDatabase = FirebaseDatabase.getInstance()
         //display data inside layout :
         //put data
-        val item = NavigationActivity.postsList.get(position)
+        val item = filteredList.get(position)
         Log.i("POSTKEY",item.key)
 
         mPostReference = mDatabase!!.reference!!.child("Posts").child(item.key)
@@ -100,7 +109,7 @@ class PostsAdapter : BaseAdapter {
 
                             layoutItem.star_btn.setBackgroundResource(R.drawable.ic_star)
                             layoutItem.star_btn.setOnClickListener{
-                                deslikePost(layoutItem,star.child("key").value.toString())
+                                deslikePost(layoutItem,star.key.toString())
                             }
                         }else{
 
@@ -187,7 +196,12 @@ class PostsAdapter : BaseAdapter {
     }
 
     override fun getItem(position: Int): Any {
-        return modelList.get(position)
+        if (filteredList!=null)
+        { return filteredList.get(position)}
+        else
+        {
+            return modelList.get(position)
+        }
     }
 
     override fun getItemId(position: Int): Long {
@@ -195,7 +209,12 @@ class PostsAdapter : BaseAdapter {
     }
 
     override fun getCount(): Int {
-        return modelList.size
+        if (filteredList!=null)
+        { return filteredList.size}
+        else
+        {
+            return modelList.size
+        }
     }
 
     private fun loadCommentsFragment(position: Int){

@@ -21,13 +21,12 @@ class Post {
     constructor()  {
 
     }
-    constructor(challenge:String, tag:String, description:String, media:String,key:String,state:Int,userUid : String){
+    constructor(challenge:String, tag:String, description:String, media:String,key:String,userUid : String){
         this.challenge = challenge
         this.tag = tag
         this.description = description
         this.media = media
         this.key = key
-        this.state = state
         this.userId = userUid
     }
 

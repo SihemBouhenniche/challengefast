@@ -142,7 +142,6 @@ init {
                         post.child("description").value.toString(),
                         post.child("media").value.toString(),
                         post.key.toString(),
-                        post.child("state").value.toString().toInt(),
                         post.child("userId").value.toString())
 
                     //adding stars list
