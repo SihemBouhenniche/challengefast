@@ -1,0 +1,4 @@
+#Sat Jun 01 16:15:30 WAT 2019
+base.0=C\:\\Users\\marwa\\Desktop\\Dossier6\\hackathon_Ramadhan\\challengefast2\\challengefast-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
+path.0=classes.dex
+renamed.0=classes.dex

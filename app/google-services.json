@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "768654139953",
+    "firebase_url": "https://challengefast-2e306.firebaseio.com",
+    "project_id": "challengefast-2e306",
+    "storage_bucket": "challengefast-2e306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768654139953:android:38389a5ec4c22105",
+        "android_client_info": {
+          "package_name": "com.example.challengefast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768654139953-jvsuht9ec9rn5krs5cpn3mi0f5li5t62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.challengefast",
+            "certificate_hash": "caf51db770f2104e1a6fc79bd0bfd20fc1eca5ef"
+          }
+        },
+        {
+          "client_id": "768654139953-uk41rbqto4bpnernld9p3qpm126u8h9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAokTWxg9r7pgYfL3djQM32CLzXUAZ8nRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768654139953-uk41rbqto4bpnernld9p3qpm126u8h9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
